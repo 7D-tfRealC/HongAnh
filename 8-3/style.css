@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #0F181A;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: #CFE9F7;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.spiner {
+    position: relative;
+    width: 350px; 
+    height: 350px;
+    border-radius: 50%;
+    margin: 100px auto;
+}
+
+.spiner::before,.spiner::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+.spiner::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, #ff00cc 0%, #333399 100%);
+    animation: spin 1s infinite linear;
+}
+
+.spiner::after {
+    width: 100%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0F181A; 
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}.text {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 26px; 
+    width: 60%;
+    white-space: nowrap;
+    line-height: 1.2;
+    z-index: 2; /* Đảm bảo chữ nằm trên cùng */
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top:65%;
+    left: 45%;
+}
+
+
