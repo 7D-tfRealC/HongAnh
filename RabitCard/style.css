@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  background-color: #b7b7a4;
+}
+
+.easter-card {
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: .5s;
+}
+
+.card-front {
+  position: relative;
+  background-color: #e9dfd1;
+  width: 300px;
+  height:300px;
+  transform-origin: left;
+  transition: .5s;
+  box-shadow: inset 30px 10px 100px rgba(0,0,0,.1), 0 0 50px rgba(0,0,0,.1);
+}
+
+.card-inside {
+  position: absolute;
+  background-color: #e9dfd1;
+  width: 300px;
+  height:300px;
+  z-index:-2;
+  left:0;
+  top:0;
+  box-shadow: inset 30px 10px 100px rgba(0,0,0,.1), 0 0 50px rgba(0,0,0,.1);
+}
+
+.easter-card:hover {
+  transform: perspective(2000px) rotate(2deg);
+}
+
+.easter-card:hover .card-front {
+  transform: rotateY(-160deg); 
+  box-shadow: 0 10px 100px rgba(0,0,0,.1);
+}
+
+.bottom {
+  position: absolute;
+  background-color: #e66d68;
+  width:300px;
+  height: 90px;
+  bottom:0;
+  z-index:7;
+}
+
+.easter-card:hover .bottom {
+  display: none;
+}
+
+.bottom:before {
+  content:"8 - Thág 3 - 2025";
+  position: absolute;
+  color: white;
+  font-size: 35px;
+  width:100%;
+  text-align: center;
+  top:22px;
+}
+
+.easter-card:hover .easter-bunny {
+  display: none;
+}
+
+.easter-bunny {
+  position: absolute;
+}
+
+.head {
+  position: absolute;
+  background-color: white;
+  width:130px;
+  height: 150px;
+  border-radius:50%;
+  top:130px;
+  left:85px;
+  z-index:5;
+}
+
+.head:before {
+  position: absolute;
+  content:"";
+  background-color: #333;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  top:40px;
+  left:30px;
+  box-shadow: 45px 0 #333;
+}
+
+.head:after {
+  content:"";
+  position: absolute;
+  background-color: white;
+  border-radius:50%;
+  width:10px;
+  height: 10px;
+  left:35px;
+  top:50px;
+  box-shadow: 45px 0 white;
+}
+.ear-left, .ear-right {
+  position: absolute;
+}
+
+.ear-left:before, .ear-left:after, .ear-right:before, .ear-right:after {
+  content:"";
+  position: absolute;
+  border-radius: 55% 45% 70% 30% / 30% 30% 70% 70%;
+}
+
+.ear-left:before, .ear-left:after {
+  transform: rotate(-20deg);
+}
+
+.ear-right:before, .ear-right:after {
+  transform: rotate(20deg);
+}
+
+.ear-left:before, .ear-right:before {
+  height: 145px;
+  width:35px;
+  background-color: white;
+  top:10px;
+}
+
+.ear-left:before {
+  left:90px;
+}
+
+.ear-right:before {
+  left:180px;
+}
+
+.ear-left:after, .ear-right:after {
+  background-color: #f7d9d1;
+  width:20px;
+  height: 130px;
+  top:27px;
+  box-shadow: inset -3px -3px rgba(0,0,0,.1);
+}
+
+.ear-left:after {
+  left:100px;
+}
+
+.ear-right:after {
+  left:183px;
+}
+
+.paws {
+  position: absolute;
+  background-color: #f7d9d1;
+  width: 25px;
+  height:15px;
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  top:193px;
+  left:137px;
+  z-index:10;
+  box-shadow: inset 0 -3px rgba(0,0,0,.1);
+}
+
+.paws:before, .paws:after {
+  content:"";
+  position: absolute;
+  background-color: white;
+  border-radius:50%;
+  width:50px;
+  height: 50px;
+  box-shadow: inset -3px -3px rgba(0,0,0,.1);
+  top:-10px;
+}
+
+.paws:before {
+  left:-80px;
+}
+
+.paws:after {
+  left:50px;
+}
+
+.wishes {
+  font-size: 20px;
+  width:200px;
+  margin-left:50px;
+  margin-top:50px;
+  color: #333;
+}
+
+.wishes:before {
+  content:"CỤC ĐÁ";
+  position: absolute;
+  top:130px;
+  left:200px;
+}
+
+.easter-eggs {
+  position: absolute;
+  background-color: #333;
+  width:150px;
+  height:3px;
+  border-radius:10px;
+  top:85%;
+  left:25%;
+}
+
+.easter-eggs:before {
+  content:"";
+  position: absolute;
+  border: 3px solid #333;
+  background-color: #333;
+  border-radius: 0 0 20px 20px;
+  width: 60px;
+  height: 30px;
+  top:-33px;
+  left:30%;
+}
+
+.easter-eggs:after {
+  content:"";
+  position: absolute;
+  border: 3px solid #333;
+  background-color: #e9dfd1;
+  width:70px;
+  height:3px;
+  border-radius:10px;
+  top:-39px;
+  left:27%;
+}
+
+.basket {
+  position: absolute;
+  border-radius: 100px 100px 0 0;
+  border: 3px solid #333;
+  width:60px;
+  height: 40px;
+  top:-82px;
+  left:30%;
+}
+
+.basket:before {
+  content:"";
+  position: absolute;
+  background-color: #e9dfd1;
+  border-radius:10px;
+  width: 35px;
+  height: 3px;
+  top:50px;
+  left:20px;
+  box-shadow: -10px 10px #e9dfd1, -5px 20px #e9dfd1;
+}
+
+.basket:after {
+  content:"";
+  position: absolute;
+  width: 1px;
+  height: 0;
+  border-bottom: 8px solid #333;
+  border-top: 8px solid #333;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  transform: rotate(-90deg);
+  top:-8px;
+  left:23px;
+}
+
+.eggs, .eggs:before, .eggs:after {
+  position: absolute;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  width:20px;
+  height:25px;
+  border: 3px solid #333;
+  background-color: #e9dfd1;
+}
+
+.eggs {
+  top:-52px;
+  left:50px;
+  z-index:-1;
+}
+
+.eggs:before {
+  content:"";
+  left:27px;
+  top:-5px;
+}
+
+.eggs:after {
+  content:"";
+  left:14px;
+  top:-10px;
+}
